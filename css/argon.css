@@ -1,0 +1,100 @@
+/*
+ * Argon Material 美化 —— 覆盖到 Stack 主题
+ * 圆角卡片 + 渐变点缀 + 精致阴影 + 多彩配色
+ */
+
+/* ===== Argon 特色: 渐变主色 ===== */
+:root {
+  --argon-grad: linear-gradient(135deg, #5e72e4 0%, #825ee4 50%, #2dce89 100%);
+  --argon-shadow: 0 8px 24px rgba(50, 50, 93, 0.11), 0 4px 8px rgba(0, 0, 0, 0.05);
+  --argon-radius: 1rem;
+}
+
+/* ===== 首页文章卡片: 圆角 + 阴影 + 悬浮 ===== */
+.article-list article {
+  border-radius: var(--argon-radius);
+  box-shadow: var(--argon-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  margin-bottom: 1.2rem;
+}
+.article-list article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(50, 50, 93, 0.15), 0 6px 12px rgba(0, 0, 0, 0.07);
+}
+
+/* ===== 侧边栏头像: 圆形 + Argon 渐变环 ===== */
+.sidebar .site-avatar img {
+  border-radius: 50%;
+  border: 3px solid transparent;
+  background: var(--argon-grad) padding-box, var(--argon-grad) border-box;
+  box-shadow: var(--argon-shadow);
+  padding: 3px;
+}
+
+/* ===== 标题渐变色 ===== */
+.post-title a,
+.article-title {
+  background: linear-gradient(135deg, #5e72e4, #825ee4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== 首页 header / 标签按钮 Material 化 ===== */
+.widget,
+.sidebar .widget {
+  border-radius: var(--argon-radius);
+  box-shadow: var(--argon-shadow);
+  border: 0;
+}
+.widget .widget-title {
+  font-weight: 700;
+}
+
+/* ===== 标签胶囊 ===== */
+.widget-tag-list ul li a,
+.tag-item a {
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+.widget-tag-list ul li a:hover {
+  background: linear-gradient(135deg, #5e72e4, #2dce89);
+  color: #fff !important;
+}
+
+/* ===== 分页按钮 ===== */
+.pagination a {
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+.pagination a:hover {
+  background: linear-gradient(135deg, #5e72e4, #825ee4);
+  color: #fff;
+}
+
+/* ===== 按钮: Argon 渐变 ===== */
+button,
+a.btn,
+.tag-list a {
+  border-radius: 999px !important;
+}
+
+/* ===== 文章正文卡片 ===== */
+#single article,
+.post-content {
+  border-radius: var(--argon-radius);
+}
+
+/* ===== 全局微调: 背景柔和 + 文字圆润 ===== */
+body {
+  background-attachment: fixed;
+}
+.post-content a {
+  border-bottom: none;
+  color: #5e72e4;
+}
+
+/* ===== 移动端友好 ===== */
+@media (max-width: 767px) {
+  .article-list article { margin-bottom: 1rem; }
+}
